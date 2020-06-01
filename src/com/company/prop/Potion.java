@@ -1,9 +1,27 @@
 package com.company.prop;
 
 public class Potion {
-    private int HPrecovery;
-    private int MPrecovery;
+    private int HPrecovery=0;
+    private int MPrecovery=0;
     private String id;
+    private int num=0;
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num += num;
+    }
 
     public int getHPrecovery() {
         return HPrecovery;

@@ -19,4 +19,14 @@ public class PotionSet {
 
     public PotionSet() {
     }
+    public Potion get(String id){
+        Potion potion=null;
+        for(Potion item:potions){
+            if(true==id.equals(item.getId())){
+                potion=item;
+                break;
+            }
+        }
+        return potion;
+    }
 }

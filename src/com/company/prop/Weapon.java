@@ -4,6 +4,18 @@ public class Weapon {
     private int damagepoints;
     private String id;
     private String description;
+    private  String occupation;
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
+    public Weapon() {
+    }
 
     public int getDamagepoints() {
         return damagepoints;

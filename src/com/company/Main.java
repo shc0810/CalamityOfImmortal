@@ -7,6 +7,6 @@ public class Main {
         Ui ui=new Ui();
         ui.openingI();
         ui.play();
-
+        System.out.println("欢迎你的测试！");
     }
 }

@@ -1,16 +1,37 @@
 package com.company.creature;
 
-public class Creature {
+import com.company.prop.Weapon;
+
+public abstract class Creature {
     private int HP;
+    Weapon currentWeapon=new Weapon();
     private int MP;
     private String name;
-    private int level;
     private int HPadd;
     private int MPadd;
+    private int damagepoints;
+    private int wepondamagepoints;
 
-    public void setLevel(int level) {
-        this.level = level;
+    public int getWepondamagepoints() {
+        return wepondamagepoints;
     }
+
+    public void setWepondamagepoints(int wepondamagepoints) {
+        this.wepondamagepoints = wepondamagepoints;
+    }
+
+    public void attack(Creature role, Creature enemy){
+        enemy.setHP(enemy.getHP()+role.getDamagepoints()+role.getWepondamagepoints());
+    }
+
+    public int getDamagepoints() {
+        return damagepoints;
+    }
+
+    public void setDamagepoints(int damagepoints) {
+        this.damagepoints = damagepoints;
+    }
+
 
     public void setHPadd(int HPadd) {
         this.HPadd = HPadd;
@@ -20,9 +41,6 @@ public class Creature {
         this.MPadd = MPadd;
     }
 
-    public int getLevel() {
-        return level;
-    }
 
     public int getHPadd() {
         return HPadd;
@@ -33,6 +51,14 @@ public class Creature {
     }
 
     public Creature() {
+    }
+
+    public Creature(int HP, int MP, int HPadd, int MPadd, int damagepoints) {
+        this.HP = HP;
+        this.MP = MP;
+        this.HPadd = HPadd;
+        this.MPadd = MPadd;
+        this.damagepoints = damagepoints;
     }
 
     public Creature(int HP, int MP, String name) {

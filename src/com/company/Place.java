@@ -5,6 +5,20 @@ import java.util.HashMap;
 public class Place {
     private String name;
     private HashMap<String,Place> exits=new HashMap<String, Place>();
+    private boolean hasSuperWeapon=false;
+
+    public boolean isHasSuperWeapon() {
+        return hasSuperWeapon;
+    }
+
+    public void setHasSuperWeapon(boolean hasSuperWeapon) {
+        this.hasSuperWeapon = hasSuperWeapon;
+    }
+
+    public String getName() {
+        return name;
+    }
+
 
     public Place(String name)
     {
@@ -26,6 +40,8 @@ public class Place {
         for(String dir : exits.keySet()){
             ret.append(dir);
             ret.append(" ");
+            ret.append(exits.get(dir));
+            ret.append("\n");
         }
         return ret.toString();
     }

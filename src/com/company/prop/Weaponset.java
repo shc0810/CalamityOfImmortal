@@ -19,4 +19,14 @@ public class Weaponset {
     public Weaponset(ArrayList<Weapon> weapons) {
         this.weapons = weapons;
     }
+    public Weapon get(String id){
+        Weapon weapon=null;
+        for(Weapon item:weapons){
+            if(true==id.equals(item.getId())){
+                weapon=item;
+                break;
+            }
+        }
+        return weapon;
+    }
 }
